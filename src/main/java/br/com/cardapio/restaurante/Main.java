@@ -1,7 +1,11 @@
 =package br.com.cardapio.restaurante;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.cardapio.restaurante.classes.Entrada;
 import br.com.cardapio.restaurante.classes.Prato;
+import br.com.cardapio.restaurante.classes.PratoPrincipal;
 
 public class Main {
     public static void main(String[] args) {
