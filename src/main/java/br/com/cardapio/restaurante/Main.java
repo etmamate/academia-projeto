@@ -1,4 +1,4 @@
-package br.com.cardapio.restaurante;
+=package br.com.cardapio.restaurante;
 
 import br.com.cardapio.restaurante.classes.Entrada;
 import br.com.cardapio.restaurante.classes.Prato;
@@ -6,7 +6,18 @@ import br.com.cardapio.restaurante.classes.Prato;
 public class Main {
     public static void main(String[] args) {
         
-        Prato strogonoff = new Prato("Strogonoof", 25.00, 2, 300, true);
+        List<PratoPrincipal> listaPratoPrincipal = new ArrayList<>();
+        
+        Prato strogonoff = new PratoPrincipal("Strogonoof", 25.00, 2, 300, true);
+        
+        String menu = """
+        ========================
+                CARDAPIO
+        ========================
+        [1] - Listar Entradas
+        [2] - Listar Pratos Principais
+                """;
+
 
         strogonoff.adicionarIngrediente("Creme de leite");
         strogonoff.adicionarIngrediente("Frango");
@@ -14,14 +25,11 @@ public class Main {
         strogonoff.adicionarIngrediente("Sal");
         strogonoff.adicionarIngrediente("Cebola");
         
+        System.out.println("Lista de ingredientes: " + strogonoff.getIngredientes());
+        
 
-        System.out.println("Lista de Ingrediente: \n" + strogonoff.getIngredientes());
 
-        strogonoff.removerIngrediente("Cebola");
 
-        System.out.println(" ");
-
-        System.out.println("Após remoção da cebola: \n" + strogonoff.getIngredientes());
 
     }
 }

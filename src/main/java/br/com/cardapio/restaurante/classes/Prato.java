@@ -3,7 +3,7 @@ package br.com.cardapio.restaurante.classes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Prato {
+public abstract class Prato {
     public String nome;
     public Double preco;
     public ArrayList<String> ingredientes;
