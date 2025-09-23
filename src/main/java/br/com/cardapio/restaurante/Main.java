@@ -1,7 +1,9 @@
-=package br.com.cardapio.restaurante;
+package br.com.cardapio.restaurante;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import br.com.cardapio.restaurante.classes.Entrada;
 import br.com.cardapio.restaurante.classes.Prato;
@@ -13,6 +15,9 @@ public class Main {
         List<PratoPrincipal> listaPratoPrincipal = new ArrayList<>();
         
         Prato strogonoff = new PratoPrincipal("Strogonoof", 25.00, 2, 300, true);
+        
+        listaPratoPrincipal.add((PratoPrincipal) strogonoff);
+
         
         String menu = """
         ========================
@@ -31,6 +36,8 @@ public class Main {
         
         System.out.println("Lista de ingredientes: " + strogonoff.getIngredientes());
         
+        JOptionPane.showMessageDialog(null, strogonoff.getIngredientes(), "Ingredientes", 1);
+
 
 
 
