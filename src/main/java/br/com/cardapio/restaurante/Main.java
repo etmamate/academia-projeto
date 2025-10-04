@@ -1,27 +1,26 @@
 package br.com.cardapio.restaurante;
 
-import br.com.cardapio.restaurante.classes.Entrada;
-import br.com.cardapio.restaurante.classes.Prato;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+import br.com.cardapio.restaurante.classes.Aluno;
 
 public class Main {
     public static void main(String[] args) {
-        
-        Prato strogonoff = new Prato("Strogonoof", 25.00, 2, 300, true);
 
-        strogonoff.adicionarIngrediente("Creme de leite");
-        strogonoff.adicionarIngrediente("Frango");
-        strogonoff.adicionarIngrediente("Milho");
-        strogonoff.adicionarIngrediente("Sal");
-        strogonoff.adicionarIngrediente("Cebola");
-        
+        Scanner scn = new Scanner(System.in);
 
-        System.out.println("Lista de Ingrediente: \n" + strogonoff.getIngredientes());
+        Aluno aluno = new Aluno("Mateus", "19026760760", "11/03/2004");
 
-        strogonoff.removerIngrediente("Cebola");
+        System.out.println(aluno.cadastroAluno());
 
-        System.out.println(" ");
+        JOptionPane.showMessageDialog(null, aluno.cadastroAluno(), "CADASTRO ALUNO!", 1);
 
-        System.out.println("Após remoção da cebola: \n" + strogonoff.getIngredientes());
+        System.out.println("Teste cadastro: ");
 
+        String novoNome = scn.nextLine();
+        aluno.setNome(novoNome);
+        System.out.println(aluno.cadastroAluno());
     }
 }
