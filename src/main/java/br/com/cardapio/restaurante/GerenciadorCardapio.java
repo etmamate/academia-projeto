@@ -8,6 +8,7 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 import br.com.cardapio.restaurante.classes.Cardapio;
+import br.com.cardapio.restaurante.classes.Entrada;
 import br.com.cardapio.restaurante.classes.PratoPrincipal;
 import br.com.cardapio.restaurante.classes.Sobremesa;
 
@@ -29,12 +30,15 @@ public class GerenciadorCardapio {
                         cadastrarPratoPrincipal(scanner, cardapio);
                         break;
                     case 2:
-                        cadastrarSobremesa(scanner, cardapio);
+                        cadastrarEntrada(scanner, cardapio);
                         break;
                     case 3:
-                        exibirCardapio(cardapio);
+                        cadastrarSobremesa(scanner, cardapio);
                         break;
                     case 4:
+                        exibirCardapio(cardapio);
+                        break;
+                    case 5:
                         System.out.println("Saindo do sistema...");
                         break;
                     default:
@@ -51,10 +55,30 @@ public class GerenciadorCardapio {
     public static void exibirMenu() {
         System.out.println("\n===== GERENCIADOR DE CARDÁPIO =====");
         System.out.println("1. Cadastrar Prato Principal");
-        System.out.println("2. Cadastrar Sobremesa");
-        System.out.println("3. Exibir Cardápio Completo");
-        System.out.println("4. Sair");
+        System.out.println("2. Cadastrar Entrada");
+        System.out.println("3. Cadastrar Sobremesa");
+        System.out.println("4. Exibir Cardápio Completo");
+        System.out.println("5. Sair");
         System.out.print("Escolha uma opção: ");
+    }
+
+    private static void cadastrarEntrada(Scanner scanner, ArrayList<Cardapio> cardapio){
+        try {
+            System.out.print("Nome da entrada: ");
+            String nome = scanner.nextLine();
+            System.out.print("Preço base: ");
+            double preco = scanner.nextDouble();
+            scanner.nextLine(); // Limpar o buffer
+            System.out.print("Ingrediente principal: ");
+            String ingrediente = scanner.nextLine();
+
+            Entrada prato = new Entrada(nome, preco, ingrediente);
+            cardapio.add(prato);
+            System.out.println("Entrada cadastrada com sucesso!");
+        } catch (InputMismatchException e) {
+            System.out.println("Erro: O preço deve ser um número. Tente novamente.");
+            scanner.nextLine(); // Limpar o buffer
+        }
     }
 
     private static void cadastrarPratoPrincipal(Scanner scanner, ArrayList<Cardapio> cardapio) {
