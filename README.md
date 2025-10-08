@@ -26,11 +26,12 @@ O código-fonte está organizado nos seguintes arquivos:
 
 ```
 .
-├── Entidade.java
-├── GerenciadorCardapio.java
-├── PratoPrincipal.java
-├── Entrada.java
-└── Sobremesa.java
+ └── Classes
+     ├── Entidade.java
+     ├── Sobremesa.java
+     ├── PratoPrincipal.java
+     ├── Entrada.java
+└── GerenciadorCardapio.java
 ```
 
   * `Entidade.java`: Classe base (abstrata) que define os atributos e métodos comuns a todos os itens do cardápio (ex: `nome`, `precoBase`).
