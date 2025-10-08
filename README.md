@@ -27,17 +27,17 @@ O código-fonte está organizado nos seguintes arquivos:
 ```
 .
  └── Classes
-     ├── Entidade.java
+     ├── Cardapio.java
      ├── Sobremesa.java
      ├── PratoPrincipal.java
      ├── Entrada.java
 └── GerenciadorCardapio.java
 ```
 
-  * `Entidade.java`: Classe base (abstrata) que define os atributos e métodos comuns a todos os itens do cardápio (ex: `nome`, `precoBase`).
-  * `PratoPrincipal.java`: Subclasse que herda de `Entidade` e representa um prato principal. Adiciona atributos específicos e implementa seus próprios métodos.
-  * `Entrada.java`: Subclasse que herda de `Entidade` e representa uma entrada. Adiciona atributos específicos e implementa seus próprios métodos.
-  * `Sobremesa.java`: Subclasse que herda de `Entidade` e representa uma sobremesa, com seus próprios atributos e implementações.
+  * `Cardapio.java`: Classe base (abstrata) que define os atributos e métodos comuns a todos os itens do cardápio (ex: `nome`, `precoBase`).
+  * `PratoPrincipal.java`: Subclasse que herda de `Cardapio` e representa um prato principal. Adiciona atributos específicos e implementa seus próprios métodos.
+  * `Entrada.java`: Subclasse que herda de `Cardapio` e representa uma entrada. Adiciona atributos específicos e implementa seus próprios métodos.
+  * `Sobremesa.java`: Subclasse que herda de `Cardapio` e representa uma sobremesa, com seus próprios atributos e implementações.
   * `GerenciadorCardapio.java`: A classe principal da aplicação, contendo o método `main`. É responsável pelo menu, interação com o usuário e gerenciamento da lista de itens.
 
 ## ⚙️ Como Executar o Projeto
